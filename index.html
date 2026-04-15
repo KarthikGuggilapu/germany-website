@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Tailwind Play CDN (for development only) -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="/assets/styles.css">
     <script>
         // Dynamic values for this page
         const pageTitle = 'Discover Industrial Excellence | Eisengießerei Dinklage GmbH';
@@ -16,7 +16,7 @@
             .then(res => res.text())
             .then(html => {
                 html = html.replace(/<!--PAGE_TITLE-->/g, pageTitle);
-                html = html.replace(/<!--PAGE_DESC-->/g, pageDesc);
+                    html = html.replace(/<!--PAGE_DESC-->/g, pageDesc);
                 document.head.insertAdjacentHTML('beforeend', html);
             });
     </script>
