@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind Play CDN (for development only) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script>
+        // Load head partial for meta/SEO (excluding Tailwind CDN)
+        fetch('partials/head.html')
+            .then(res => res.text())
+            .then(html => {
+                html = html.replace(/<!--PAGE_TITLE-->/g, 'Our Services | Eisengießerei Dinklage GmbH');
+                    document.head.insertAdjacentHTML('beforeend', html);
+            });
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <div id="header"></div>
+    <main id="content">
+        <!-- Hero/Intro Section -->
+        <section class="bg-gradient-to-br from-gray-100 to-gray-200 py-12 md:py-20">
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-gray-800">Our Services</h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8">Comprehensive solutions for industrial iron
+                        casting, machining, and quality assurance.</p>
+                </div>
+                <div class="md:col-span-1 flex justify-center">
+                    <div class="w-full h-48 md:w-64 md:h-64 placeholder">Services Image</div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured / Services Grid -->
+        <section class="py-12 md:py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-gray-800">Featured Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="col-span-2 md:col-span-2 h-48 placeholder">Main Service</div>
+                    <div class="col-span-1 md:col-span-1 h-48 placeholder">Service</div>
+                    <div class="col-span-1 md:col-span-1 h-48 placeholder">Service</div>
+                </div>
+            </div>
+        </section>
+        <!-- Highlights Section -->
+        <section class="py-12 md:py-16 bg-gray-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-gray-800">Highlights</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 mx-auto md:mx-0"></div>
+                        <div class="h-8 placeholder">Name</div>
+                    </div>
+                    <div class="col-span-1 md:col-span-1 h-32 placeholder">Highlight Image</div>
+                    <div class="flex flex-col gap-2">
+                        <div class="h-8 placeholder">Highlight Title</div>
+                        <div class="h-8 placeholder">Highlight Desc</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Newsletter / CTA Section -->
+        <section class="py-12 bg-gray-100">
+            <div class="max-w-3xl mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Get Industrial Insights Straight to Your Inbox</h2>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 mt-6">
+                    <input type="email" class="px-4 py-3 rounded border border-gray-300 w-full md:w-auto"
+                        placeholder="Your email address" disabled>
+                    <button class="px-6 py-3 bg-gray-800 text-white rounded shadow hover:bg-gray-700 transition"
+                        disabled>Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script>
+        function includeHTML(id, url) {
+            fetch(url)
+                .then(res => res.text())
+                .then(html => document.getElementById(id).innerHTML = html);
+        }
+        includeHTML('header', 'partials/header.html');
+        includeHTML('footer', 'partials/footer.html');
+    </script>
+</body>
+
+</html>
