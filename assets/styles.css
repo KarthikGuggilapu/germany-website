@@ -1,0 +1,27 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Placeholder styles for demo blocks/images */
+.placeholder {
+    background: #e5e7eb;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+/* Test style: make all h1 text red and underlined to verify styles.css is loaded */
+h1 {
+    color: blue !important;
+    text-decoration: underline !important;
+}
